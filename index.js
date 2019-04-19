@@ -372,9 +372,8 @@ Client.prototype.use = function (fn) {
  * @api private
  */
 Client.prototype.fallbackCallback = function fallbackCallback(extend, event, fn, context) {
-    var params = utils.getParamNames(fn);
     var func = fn;
-    if (params.length === 1) {
+    if (fn.length === 1) {
         func = function(err, event) {
             fn(event, err);
         };
